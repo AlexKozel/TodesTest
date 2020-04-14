@@ -1,11 +1,14 @@
 package com.example.todes.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
+import java.util.List;
 
 @Component
+@Scope("prototype")
 public class QueryBuilder {
 
     HashMap<String, String> queryMap = new HashMap<>();
@@ -14,15 +17,11 @@ public class QueryBuilder {
     private QuerySQLInitializer queryInitializer;
 
     @Component
+    @Scope("prototype")
     public class Builder{
 
         @Autowired
         private QueryBuilder newQueryBuilder;
-
-//        Builder(){
-//            newQueryBuilder = new QueryBuilder();
-//            newQueryBuilder.queryInitializer = new QuerySQLInitializer();
-//        }
 
         public Builder with(String column, String value){
             newQueryBuilder.queryMap.put(column, value);
@@ -35,7 +34,7 @@ public class QueryBuilder {
          * used implementation of sql-query generator
          * @return result from  query executor
          */
-        public Object find(){
+        public List find(){
            return newQueryBuilder.queryInitializer.select(newQueryBuilder.queryMap);
         }
 //TODO EM почему-то пустой

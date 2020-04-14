@@ -18,7 +18,7 @@ public class Employee {
     private String patronymic;
     @Column(name = "birth_date")
     private LocalDate birthate;
-    private Boolean gender;
+    private String gender;
 
     @OneToMany(mappedBy = "employee", fetch=FetchType.EAGER)
     private Set<Contacts> contacts;
@@ -29,6 +29,70 @@ public class Employee {
             joinColumns = { @JoinColumn (name = "employee_id")},
             inverseJoinColumns = {@JoinColumn (name = "stack_id")})
     private Set<Stack> stacks;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
+    }
+
+    public LocalDate getBirthate() {
+        return birthate;
+    }
+
+    public void setBirthate(LocalDate birthate) {
+        this.birthate = birthate;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Set<Contacts> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(Set<Contacts> contacts) {
+        this.contacts = contacts;
+    }
+
+    public Set<Stack> getStacks() {
+        return stacks;
+    }
+
+    public void setStacks(Set<Stack> stacks) {
+        this.stacks = stacks;
+    }
 
     @Override
     public String toString() {
@@ -42,4 +106,5 @@ public class Employee {
                 " " + stacks +
                 '}';
     }
+
 }

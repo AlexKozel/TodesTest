@@ -5,7 +5,7 @@ create table public.employee
     last_name  varchar(50),
     patronymic varchar(50),
     birth_date timestamp,
-    gender     boolean,
+    gender     varchar(10),
     primary key (id)
 );
 
