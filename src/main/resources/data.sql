@@ -1,13 +1,13 @@
 -- employees
 
 insert into public.employee (id, first_name, last_name, patronymic, birth_date, gender)
-values (1, 'Петр', 'Петров', 'Петрович', ' 1986-12-12 ', true);
+values (1, 'Петр', 'Петров', 'Петрович', ' 1986-12-12 ', 'male');
 
 insert into public.employee (id, first_name, last_name, patronymic, birth_date, gender)
-values (2, 'Иван', 'Иванов', 'Иванович', ' 1997-04-04 ', true);
+values (2, 'Иван', 'Иванов', 'Иванович', ' 1997-04-04 ', 'male');
 
 insert into public.employee (id, first_name, last_name, patronymic, birth_date, gender)
-values (3, 'Марина', 'Морская', 'Васильевна', ' 1999-11-07 ', true);
+values (3, 'Марина', 'Морская', 'Васильевна', ' 1999-11-07 ', 'female');
 
 -- stack
 insert into public.stack (stack_id, stack_name)
